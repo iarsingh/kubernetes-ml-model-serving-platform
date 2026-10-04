@@ -11,5 +11,6 @@ def check(body):
     if image.endswith(":latest") or image == "latest":
         failed.append("image_tag_latest")
 
-    if not body.get("probes"): failed.append("missing_probes")\n    if not body.get("hpa"): failed.append("missing_hpa")
+    if not body.get("probes"): failed.append("missing_probes")
+    if not body.get("hpa"): failed.append("missing_hpa")
     return {"passed": not failed, "failed": failed, "applied": False}
